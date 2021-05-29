@@ -1,0 +1,401 @@
+Examen Teórico – Desarrollar en Node.JS.
+1.	Node.js es un sistema del lado del servidor.
+2.	Node.js es un entorno de programación basado en el lenguaje de programación 
+a.	Java
+b.	JavaScript
+c.	PHP
+d.	Python
+3.	Node.js es una plataforma creada sobre ____________________ para crear aplicaciones de red rápidas y escalables.
+a.	El motor V5 de safari
+b.	El motor V8 de Chrome
+c.	El motor V8 de Firefox
+d.	Ninguno de los anteriores
+4.	Qué comando utilizas para saber la versión de node.js que tienes instalada
+a.	node --version
+b.	node -version
+c.	node -v
+d.	node.js –version
+5.	¿Cómo ejecutas la aplicación miappnode.js en node.js?
+a.	run miappnode.js
+b.	node miappnode.js
+c.	exec miappnode.js
+d.	execute miappnode.js
+6.	How Node based web servers are different from traditional web servers?
+a.	Node based server process request much faster than traditional server.
+b.	Node based server uses a single threaded model and can services much larger number of requests than traditional server like Apache HTTP Server.
+c.	There is no much difference between the two.
+d.	None of the above.
+7.	By default, npm installs any dependency in the local mode.
+a.	True
+b.	False
+8.	Which method of fs module is used to read a directory?
+a.	fs.readDirectory(path[, mode], callback)
+b.	fs.read(path[, mode], callback)
+c.	fs.readdir(path, callback)
+d.	None of the above.
+9.	What is Express?
+a.	Express is a application framework that provides a robust set of features to develop desktop based applications.
+b.	Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications.
+c.	Both of the above.
+d.	None of the above.
+10.	Which of the following is true about readable stream?
+a.	Readable stream is used for read operation.
+b.	Output of readable stream can be input to a writable stream.
+c.	Both of the above.
+d.	None of the above.
+11.	Which of the following stands true for dns.lookup(hostname[, options], callback) method?
+a.	Resolves a hostname (e.g. 'google.com') into the first found A (IPv4) or AAAA (IPv6) record.
+b.	If options is not provided, then IP v4 and v6 addresses are both valid. If options is an integer, then it must be 4 or 6.
+c.	Both of the above.
+d.	None of the above.
+12.	All APIs of Node.JS are.?
+a.	Asynchronous
+b.	Synchronous
+c.	Both of the above.
+d.	None of the above.
+13.	Which of the following is true about internal binding with respect to domain module?
+a.	Error emmitter is executing its code within run method of a domain.
+b.	Error emmitter is added explicitly to a domain using its add method.
+c.	Both of the above.
+d.	None of the above
+14.	Which of the following is not a valid HTTP method?
+a.	get
+b.	put
+c.	post
+d.	header
+15.	Which of the following is true about EventEmitter.on property?
+a.	on property is used to fire event.
+b.	on property is used to bind a function with the event.
+c.	on property is used to locate an event handler.
+d.	None of the above.
+16.	Which of the following API creates a client?
+a.	net.createServer([options][, connectionListener])
+b.	net.connect(options[, connectionListener])
+c.	net.createConnection(port[, host][, connectListener])
+d.	None of the above.
+e.	17.	Which of the following is true about spawn methd of child_process module.
+a.	The spawn() method method launches a new process with a given command.
+b.	The spawn() method returns streams (stdout, stderr).
+c.	Both of the above.
+d.	None of the above.
+
+18.	- Which of the following is true about process global object?
+a.	The process object is an instance of EventEmitter.
+b.	process emits exit event when process is about to exit.
+c.	process emits uncaughtException when when an exception bubbles all the way back to the event loop.
+d.	All of the above.
+
+19.	Which method of fs module is used to write a file?
+a.	fs.write(path, flags[, mode], callback)
+b.	fs.writeFile(path, flags[, mode], callback)
+c.	fs.writePath(path, flags[, mode], callback)
+d.	None of the above.
+20.	Which of the following code can make a request to a web server?
+a.	http.request(options, callback)
+b.	http.createRequest(options, callback)
+c.	http.makeRequest(options, callback)
+d.	None of the above.
+21.	Can we create child processes in Node applications.
+a.	True
+b.	False
+22.	Which of the following command will show all the modules installed globally?
+a.	$ npm ls -g
+b.	$ npm ls
+c.	$ node ls -g
+d.	$ node ls
+23.	Which of the following module is required for exception handling in Node?
+a.	web module
+b.	net module
+c.	domain module
+d.	error module
+24.	What REST stands for?
+a.	REpresentational State Transfer
+b.	Resource Efficient State Transfer
+c.	Real Elegant State Transfer
+d.	Resource Elegant State Transfer
+25.	A stream fires error event when there is any error receiving or writing data.
+a.	False
+b.	True
+PUNTO 1. Examen Base – Desarrollar en Node JS.
+
+1)	Haz una clase llamada Persona que siga las siguientes condiciones:
+●	Sus atributos son: nombre, edad, NSS (Numero de Seguro Social), sexo (H hombre, M mujer), peso y altura. No queremos que se accedan directamente a ellos. Piensa que modificador de acceso es el más adecuado, también su tipo. Si quieres añadir algún atributo puedes hacerlo.
+Class Persona{	
+           #nombre;
+           #edad;
+           #NSS;
+           const sexo = “hombre;
+           #peso;
+           #altura;
+           const bajopeso = -1;
+           const  pesoideal = 0;
+           const sobrepeso = 1;
+
+	constructor(nombre, edad, NSS, sexo, peso, altura){
+		this.#nombre= nombre;
+		this.#edad= edad;
+		this.#NSS= NSS;
+		this.#sexo= sexo;
+		this.#peso= peso;
+		this.#altura= altura;
+	}
+	CalculoIMC(){
+	    	imc= peso/(altura*altura);
+		if(imc < 19){
+			   return bajopeso;
+		}
+		else if (19 <= imc && imc < 25){
+ 		    return pesoideal;
+		} else if(25<= imc && imc <30 ){
+		   return  sobrepeso;
+		}
+	}
+	function esMayorEdad(){
+	  if(edad <=18){
+	      return true:	
+	}
+}
+function comprobarSexo(sexo){
+if(isNaN (sexo)){
+	return true;
+}
+return false;
+}
+Persona1 = new Persona(“Juan”, 24,”314684354fdc”, “M”, 66, 1.70);
+Persona.prototype.toString = function PerroToString(){
+	var retorno = “Persona”+ this.nombre + “ es ” +  this.edad + “ ” +this.NSS+ “ ” +this.sexo+ “ ” +this.peso+” “ + this.altura;
+return retorno;
+
+} 
+	
+ }
+●	Por defecto, todos los atributos menos el NSS serán valores por defecto según su tipo (0 números, cadena vacía para String, etc.). Sexo será hombre por defecto, usa una constante para ello.
+• Se implementará: 
+●	Un constructor con todos los atributos como parámetro.
+• Los métodos que se implementarán son: 
+o calcular IMC(): calculara si la persona está en su peso ideal (peso en kg/(Estatura^2 en m)), devuelve un -1 si está por debajo de su peso ideal, un 0 si está en su peso ideal y un 1 si tiene sobrepeso .Te recomiendo que uses constantes para devolver estos valores.
+
+o esMayorDeEdad(): indica si es mayor de edad, devuelve un booleano. 
+o comprobarSexo(char sexo): comprueba que el sexo introducido es correcto. Devolver el valor en booleano. No será visible al exterior. 
+o toString(): devuelve toda la información del objeto. 
+o generaNSS(): genera una expresión de 8 caracteres con números y letras al azar. Este método será invocado cuando se construya el objeto. Puedes dividir el método en partes para que te sea más fácil. No será visible al exterior. o Métodos set de cada parámetro, excepto de NSS.
+Ahora, crea una pantalla que haga lo siguiente:
+ • Pide por formulario el nombre, la edad, sexo, peso y altura.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba de Node.js</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form action="recuperardatos" method="post">
+  Ingrese su nombre:
+  <input type="text" name="nombre" size="30"><br>
+  Ingrese edad:
+  <input type="number" name="edad" size="2" min=”18”><br>
+   <input type="radio" name="boton"> Hombre<br>
+   <input type="radio" name="boton"> Mujer <br>
+   Ingrese peso:
+  <input type="number" name="peso" size="2"><br>
+   Ingrese altura:
+  <input type="number" name="altura" size="2"><br>
+
+  <input type="submit" value="Enviar">
+</form>
+</body>
+</html>
+
+ • Deberá comprobar si está en su peso ideal, tiene sobrepeso o por debajo de su peso ideal con un mensaje. 
+• Indicar si es mayor de edad. 
+• Por último, mostrar toda la información ingresada. Puedes usar métodos, para que te sea más fácil
+const http=require('http');
+const url=require('url');
+const fs=require('fs');
+const querystring = require('querystring');
+
+const mime = {
+   'html' : 'text/html',
+   'css'  : 'text/css',
+   'jpg'  : 'image/jpg',
+   'ico'  : 'image/x-icon',
+   'mp3'  : 'audio/mpeg3',
+   'mp4'  : 'video/mp4'
+};
+
+const servidor=http.createServer((pedido ,respuesta) => {
+    const objetourl = url.parse(pedido.url);
+  let camino='public'+objetourl.pathname;
+  if (camino=='public/')
+    camino='public/index.html';
+  encaminar(pedido,respuesta,camino);
+});
+
+servidor.listen(8888);
+
+
+function encaminar (pedido,respuesta,camino) {
+  console.log(camino);
+  switch (camino) {
+    case 'public/recuperardatos': {
+      recuperar(pedido,respuesta);
+      break;
+    }	
+    default : {  
+      fs.stat(camino, error => {
+        if (!error) {
+        fs.readFile(camino,(error, contenido) => {
+          if (error) {
+            respuesta.writeHead(500, {'Content-Type': 'text/plain'});
+            respuesta.write('Error interno');
+            respuesta.end();					
+          } else {
+            const vec = camino.split('.');
+            const extension=vec[vec.length-1];
+            const mimearchivo=mime[extension];
+            respuesta.writeHead(200, {'Content-Type': mimearchivo});
+            respuesta.write(contenido);
+            respuesta.end();
+          }
+        });
+      } else {
+        respuesta.writeHead(404, {'Content-Type': 'text/html'});
+        respuesta.write('<!doctype html><html><head></head><body>Recurso inexistente</body></html>');		
+        respuesta.end();
+        }
+      });	
+    }
+  }	
+}
+
+
+function recuperar(pedido,respuesta) {
+  let info = '';
+  pedido.on('data', datosparciales => {
+    info += datosparciales;
+  });
+  pedido.on('end', () => {
+    const formulario = querystring.parse(info);
+    respuesta.writeHead(200, {'Content-Type': 'text/html'});
+    const pagina=
+      `<!doctype html><html><head></head><body>
+       Nombre de usuario:${formulario['nombre']}<br>
+      Clave:${formulario['clave']}<br>
+      <a href="index.html">Retornar</a>
+      </body></html>`;
+    respuesta.end(pagina);
+  });	
+}
+
+console.log('Servidor web iniciado');
+
+PUNTO 2. Examen Servicios REST – Node JS.
+Desarrollar API REST con JSON que permita consumir dar de alta, consultar y modificar un cliente. 
+{
+	“Cliente”: [
+	{
+	 “id”: 1,
+	“nombre_usuario”: “Juan158”,
+	“contraseña”: “ccvdfvfgty1”,
+	“nombre”: “Juan”,
+	“apellidos”: “Martínez Rojas”,
+	“correo_electronico”: “juan158@gmail.com”,
+	“edad”: 20,
+	“estatua”: 1.75,
+	“peso”: 75.5,
+	“IMC”: 20,
+	“GEB”: 1.58,
+	“ETA”: 15.5,
+	“Fecha_creacion”: “2021-02-04”,
+	“Fecha_actualizacion”: “2021-08”
+	},
+	]
+}
+La respuesta de la API para cada petición deberá considerar los siguientes campos base dentro de la respuesta JSON:
+Cve_Error (donde 0 es exitoso y cual error es con un valor negativo). 
+Cve_Mensaje (la descripción del código de mensaje).
+Los registros no deben permitir ni repetir nombre de usuario ni correo electrónico. 
+Los clientes deberán tener los siguientes campos: 
+ 
+
+1.	Realiza el Siguiente POST para agregar un Cliente
+ POST /NutriNET/Cliente
+ Con la siguiente estructura JSON (Diferentes Valores) 
+{“Nombre": "Juan", 
+"Apellidos": "Perez Hernandez", 
+"Nombre_Usuario": "Ju", 
+"Correo_Electronico":
+ "jperez@hotmail.com", 
+"Contraseña": "juanitoperez"
+
+POST/NutriNET/Cliente
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+{“Nombre": "Juan", "Apellidos": "Perez Hernandez", "Nombre_Usuario": "Ju", "Correo_Electronico":  "jperez@hotmail.com", "Contraseña": "juanitoperez”}
+
+HTTP/1.1  0 Created
+Content-Type: application/json
+Content-Length: 65
+Connection: clocase
+{“Nombre": "Juan", "Apellidos": "Perez Hernandez", "Nombre_Usuario": "Ju", "Correo_Electronico":  "jperez@hotmail.com", "Contraseña": "juanitoperez”}
+
+
+
+2.	Realiza un Get (Tendrá la opción de todos o por ID)
+ GET /NutriNET/Cliente
+GET/NutriNet/Cliente/ID HTTP/1.1
+
+      3.  Realiza el siguiente PUT, para modificar el peso y la estatura de un cliente 
+PUT /NutriNET/Cliente/59 
+{ "Edad": 39 "
+Estatura": 1.80 
+"Peso": 60 "
+GEB": 1500 }
+PUT/NutriNET/Cliente59
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+             {"Edad": 39 " Estatura": 1.80  "Peso": 60 " GEB": 1500 }
+
+HTTP/1.1  1 Error
+Content-Type: application/json
+Content-Length: 59
+Connection: badRequestException
+{"Edad": 39 " Estatura": 1.80  "Peso": 60 " GEB": 1500 }
+PUNTO 3. Examen Base de Datos - Utilizar BD MySQL (local).
+LOS GRANDES ALMACENES
+ 
+En base al ER generar los Querys necesarios para solventarlos:
+a.	Generar script para poblar todas las tablas.
+Insert into Productos values (1, “Agua mineral 1 litro”, 25.5).
+INSER INTO Cajeros VALUES ( 1, “Enzze Perez”)
+     INSER INTO Venta VALUES (1, 1, 2);
+     INSER INTO Maquinas_Registradoras VALUES (1, 1);
+
+b.	Mostrar el número de ventas de cada producto, ordenado de más a menos ventas.
+
+SELECT * FROM Ventas ORDER BY Producto ASC;
+
+c.	Obtener un informe completo de ventas, indicando el nombre del cajero que realizo la venta, nombre y precios de los productos vendidos, y el piso en el que se encuentra la máquina registradora donde se realizó la venta.
+
+SELECT Venta.Producto, Cajeros.NombreApels,Productos.Nombre, Productos.Precio , Maquinas_Registradoras.Piso FROM Venta INNER JOIN Venta ON Venta.Maquina = Maquinas_Registradoras.Maquina, Venta.Cajero = Cajeros.Cajero, Productos.Producto = Venta.Producto
+
+
+d.	Obtener las ventas totales realizadas en cada piso. 
+
+SELECT Venta.Producto, Maquinas_Registradoras.Piso FROM Venta INNER JOIN Maquinas_Registradoras ON Venta.Maquina = Maquinas_Registradoras.Maquina, 
+
+e.	Obtener el código y nombre de cada cajero junto con el importe total de sus ventas. 
+
+SELECT Cajeros.NombreApels, Venta.Producto FROM Venta INNER JOIN Ventas ON Cajeros.Cajero = Venta.Cajero;
+
+
+f.	Obtener el código y nombre de aquellos cajeros que hayan realizado ventas en pisos cuyas ventas totales sean inferiores a los 5000 pesos.
+
+SELECT Cajeros.NombreApels, Venta.Maquina, Maquinas_Registradoras.piso FROM Venta INNER JOIN Ventas ON Cajeros.Cajero = Venta.Cajero, Venta.Maquina = Maquinas_Registradoras.Maquina WHERE VentasTotales < 500;
+
+
+PUNTO 4. Realizar la experiencia al usuario con Angular versión 5 en adelante.
+
+El Framework Angular nos permite separar completamente lo que es el fron tend (capa visual donde la aplicación interactúa con los usuarios) y el banck end (capa de entrada o código del programa al que los usuarios o tienen acceso) en la aplicación, porque nos evita el tener que escribir código repetitivo lo cual nos mantiene todo de manera mas ordenada gracias el uso del patrón de diseño MVC (Modelo Vista Controlador), con el fin de poder asegurar desarrollos con mayor rapidez, a su ves nos brinda el poder realizar modificaciones y actualizaciones de manera más eficiente y rápida.
+
